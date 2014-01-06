@@ -45,7 +45,15 @@
     [self setupEventScrollView];
     [self.view addSubview:self.eventScrollView];
     
-
+    UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(20.0f, 530.0f, 320.0f, 20.0f)];
+    UILabel *infoLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 20.0f)];
+    
+    infoLabel.text = @"tap on map to hide/reveal action bars";
+    infoLabel.textColor = [UIColor whiteColor];
+    infoLabel.numberOfLines = 0;
+    [infoLabel sizeToFit];
+    [infoView addSubview:infoLabel];
+    [self.view addSubview:infoView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +70,10 @@
         [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden];
         [self.tabBarController.tabBar setHidden:!self.tabBarController.tabBar.isHidden];
         [self hidesBottomBarWhenPushed];
+    } else if(y>500) {
+        if(self.tabBarController.tabBar.isHidden) {
+            [self.tabBarController.tabBar setHidden:NO];
+        }
     }
 //    else {
 //        [self performSegueWithIdentifier:@"EventDetailsSegue" sender:self];
@@ -177,9 +189,17 @@
     // add image to scroll view
     UIImage *image = [UIImage imageNamed:imageString];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.userInteractionEnabled = YES;
     imageView.frame = CGRectMake(positionX*(IMAGESIZE+IMAGE_OFFSET), positionY*(IMAGESIZE+IMAGE_OFFSET), IMAGESIZE, IMAGESIZE);
     NSLog(@"(x,y) : (%d,%d)",positionX*(IMAGESIZE+IMAGE_OFFSET),positionY*(IMAGESIZE+IMAGE_OFFSET));
+    //[self.eventScrollView addSubview:imageView];
+    
+    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                               action:@selector(handleSingleTap:)];
+    singleTap.numberOfTapsRequired = 1;
+    [imageView addGestureRecognizer:singleTap];
     [self.eventScrollView addSubview:imageView];
+
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView1{
@@ -222,9 +242,18 @@
     
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-
-
+    
 }
+- (void)handleSingleTap:(UIGestureRecognizer *)sender
+{
+    CGPoint location = [sender locationInView:self.view];
+    CGFloat y = location.y;
+    CGFloat x = location.x;
+    
+    NSLog(@"image tapped at location (%f, %f)", x,y);
+    
+}
+
 
 
 @end
