@@ -37,7 +37,7 @@
 	// Do any additional setup after loading the view.
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideShowNavigation:)];
-    tap.numberOfTapsRequired = 1;
+    tap.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:tap];
     
     self.eventScrollView.showsHorizontalScrollIndicator = NO;
@@ -48,7 +48,7 @@
     UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(20.0f, 530.0f, 320.0f, 20.0f)];
     UILabel *infoLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 20.0f)];
     
-    infoLabel.text = @"tap on map to hide/reveal action bars";
+    infoLabel.text = @"tap on map to hide/reveal top bar";
     infoLabel.textColor = [UIColor whiteColor];
     infoLabel.numberOfLines = 0;
     [infoLabel sizeToFit];
@@ -70,10 +70,9 @@
         [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden];
         [self.tabBarController.tabBar setHidden:!self.tabBarController.tabBar.isHidden];
         [self hidesBottomBarWhenPushed];
-    } else if(y>500) {
-        if(self.tabBarController.tabBar.isHidden) {
+    } else if(y>500 && self.tabBarController.tabBar.isHidden) {
             [self.tabBarController.tabBar setHidden:NO];
-        }
+       
     }
 //    else {
 //        [self performSegueWithIdentifier:@"EventDetailsSegue" sender:self];
@@ -246,7 +245,7 @@
 }
 - (void)handleSingleTap:(UIGestureRecognizer *)sender
 {
-    CGPoint location = [sender locationInView:self.view];
+    CGPoint location = [sender locationInView:self.eventScrollView];
     CGFloat y = location.y;
     CGFloat x = location.x;
     
