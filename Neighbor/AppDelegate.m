@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Neighbor
 //
-//  Created by Lien Nguyen on 1/2/14.
+//  Created by Lienne Nguyen on 1/2/14.
 //  Copyright (c) 2014 Lienne Nguyen. All rights reserved.
 //
 
@@ -13,6 +13,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [self setCustomStyle];
+    
+    
+//        for (NSString* family in [UIFont familyNames])
+//        {
+//            NSLog(@"%@", family);
+//    
+//            for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//            {
+//                NSLog(@"  %@", name);
+//            }
+//       }
     return YES;
 }
 							
@@ -41,6 +54,51 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) setCustomStyle {
+    //self.window.tintColor = UIColorFromRGB(0x1A42E8,1);
+    UIColor *barColor = UIColorFromRGB(0x1A42E8,1);
+    
+    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -22.f, 320.f, 64.f)];
+    colorView.opaque = NO;
+    colorView.alpha = .5f;
+    colorView.backgroundColor = barColor;
+    
+    UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:32.0f];
+    
+    UIColor* textColor = [UIColor whiteColor];
+    NSDictionary *barTitleAttributes = @{ NSForegroundColorAttributeName : textColor,
+                                          NSFontAttributeName : font,
+                                          NSStrokeWidthAttributeName : [NSNumber numberWithFloat:-2.0],
+                                          NSStrokeColorAttributeName : [UIColor lightGrayColor]
+                                          };
+    
+    [[[UINavigationBar appearance] layer] insertSublayer:colorView.layer above:0];
+    
+    [[UINavigationBar appearance] setBarTintColor: barColor];
+    [[UINavigationBar appearance] setTintColor:textColor];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setTitleTextAttributes:barTitleAttributes];
+    [[UITabBar appearance] setBarTintColor:textColor];
+    
+    
+    
+    
+    //segmented control
+    
+    [[UISegmentedControl appearance] setBackgroundColor:[UIColor whiteColor]];
+    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [[UISegmentedControl appearance] setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
+
+}
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
+{
+    return UIBarPositionTopAttached;
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 @end
