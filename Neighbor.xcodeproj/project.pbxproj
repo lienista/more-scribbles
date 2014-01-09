@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		FC2AEE94187BF32700ECE5CD /* MapSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2AEE93187BF32700ECE5CD /* MapSummaryViewController.m */; };
 		FC4C3F48187D1D5800FE0BAD /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C3F47187D1D5800FE0BAD /* BubbleView.m */; };
+		FC4C3F4B187E3D2300FE0BAD /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F49187E3D2300FE0BAD /* back.png */; };
+		FC4C3F4C187E3D2300FE0BAD /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F4A187E3D2300FE0BAD /* back@2x.png */; };
+		FC4C3F4F187E3D2F00FE0BAD /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F4D187E3D2F00FE0BAD /* calendar.png */; };
+		FC4C3F50187E3D2F00FE0BAD /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F4E187E3D2F00FE0BAD /* calendar@2x.png */; };
+		FC4C3F53187E3D3D00FE0BAD /* compassC.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F51187E3D3D00FE0BAD /* compassC.png */; };
+		FC4C3F54187E3D3D00FE0BAD /* compassC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F52187E3D3D00FE0BAD /* compassC@2x.png */; };
+		FC4C3F57187E3D7500FE0BAD /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F55187E3D7500FE0BAD /* compass.png */; };
+		FC4C3F58187E3D7500FE0BAD /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F56187E3D7500FE0BAD /* compass@2x.png */; };
+		FC4C3F5B187E3FE800FE0BAD /* bubbleC.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F59187E3FE800FE0BAD /* bubbleC.png */; };
+		FC4C3F5C187E3FE800FE0BAD /* bubbleC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC4C3F5A187E3FE800FE0BAD /* bubbleC@2x.png */; };
+		FC4C3F5F187E406600FE0BAD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C3F5E187E406600FE0BAD /* EventViewController.m */; };
 		FCB942C91876880B001851FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942C81876880B001851FD /* Foundation.framework */; };
 		FCB942CB1876880B001851FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942CA1876880B001851FD /* CoreGraphics.framework */; };
 		FCB942CD1876880B001851FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942CC1876880B001851FD /* UIKit.framework */; };
@@ -71,6 +82,18 @@
 		FC2AEE93187BF32700ECE5CD /* MapSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSummaryViewController.m; sourceTree = "<group>"; };
 		FC4C3F46187D1D5800FE0BAD /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BubbleView.h; path = Views/BubbleView.h; sourceTree = "<group>"; };
 		FC4C3F47187D1D5800FE0BAD /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BubbleView.m; path = Views/BubbleView.m; sourceTree = "<group>"; };
+		FC4C3F49187E3D2300FE0BAD /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		FC4C3F4A187E3D2300FE0BAD /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		FC4C3F4D187E3D2F00FE0BAD /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		FC4C3F4E187E3D2F00FE0BAD /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		FC4C3F51187E3D3D00FE0BAD /* compassC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compassC.png; sourceTree = "<group>"; };
+		FC4C3F52187E3D3D00FE0BAD /* compassC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compassC@2x.png"; sourceTree = "<group>"; };
+		FC4C3F55187E3D7500FE0BAD /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		FC4C3F56187E3D7500FE0BAD /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass@2x.png"; sourceTree = "<group>"; };
+		FC4C3F59187E3FE800FE0BAD /* bubbleC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleC.png; sourceTree = "<group>"; };
+		FC4C3F5A187E3FE800FE0BAD /* bubbleC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleC@2x.png"; sourceTree = "<group>"; };
+		FC4C3F5D187E406600FE0BAD /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		FC4C3F5E187E406600FE0BAD /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		FCB942C51876880B001851FD /* Neighbor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB942C81876880B001851FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCB942CA1876880B001851FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -202,6 +225,8 @@
 				FCB942D71876880B001851FD /* AppDelegate.h */,
 				FCB942D81876880B001851FD /* AppDelegate.m */,
 				FCB942DA1876880B001851FD /* Main.storyboard */,
+				FC4C3F5D187E406600FE0BAD /* EventViewController.h */,
+				FC4C3F5E187E406600FE0BAD /* EventViewController.m */,
 				FC2AEE92187BF32700ECE5CD /* MapSummaryViewController.h */,
 				FC2AEE93187BF32700ECE5CD /* MapSummaryViewController.m */,
 				FCB9433B18777726001851FD /* EventDetailsViewController.h */,
@@ -286,12 +311,18 @@
 		FCB9431F187762E9001851FD /* icons-bw */ = {
 			isa = PBXGroup;
 			children = (
-				FCB9432918776705001851FD /* settings@2x.png */,
-				FCB9432A18776705001851FD /* settings.png */,
+				FC4C3F49187E3D2300FE0BAD /* back.png */,
+				FC4C3F4A187E3D2300FE0BAD /* back@2x.png */,
+				FC4C3F4D187E3D2F00FE0BAD /* calendar.png */,
+				FC4C3F4E187E3D2F00FE0BAD /* calendar@2x.png */,
+				FC4C3F55187E3D7500FE0BAD /* compass.png */,
+				FC4C3F56187E3D7500FE0BAD /* compass@2x.png */,
 				FCB943251877637E001851FD /* holler@2x.png */,
 				FCB943261877637E001851FD /* holler.png */,
 				FCB943211877630E001851FD /* homeNavBar.png */,
 				FCB943221877630E001851FD /* homeNavBar@2x.png */,
+				FCB9432918776705001851FD /* settings@2x.png */,
+				FCB9432A18776705001851FD /* settings.png */,
 				FCB9432D187767D7001851FD /* world@2x.png */,
 				FCB9432E187767D7001851FD /* world.png */,
 			);
@@ -301,6 +332,10 @@
 		FCB94320187762F7001851FD /* icons-colored */ = {
 			isa = PBXGroup;
 			children = (
+				FC4C3F59187E3FE800FE0BAD /* bubbleC.png */,
+				FC4C3F5A187E3FE800FE0BAD /* bubbleC@2x.png */,
+				FC4C3F51187E3D3D00FE0BAD /* compassC.png */,
+				FC4C3F52187E3D3D00FE0BAD /* compassC@2x.png */,
 			);
 			name = "icons-colored";
 			sourceTree = "<group>";
@@ -392,11 +427,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB942E11876880B001851FD /* Images.xcassets in Resources */,
+				FC4C3F50187E3D2F00FE0BAD /* calendar@2x.png in Resources */,
 				FCB9431118769E0D001851FD /* gradient9.png in Resources */,
 				FCB943181876B7B1001851FD /* Climacons.ttf in Resources */,
 				FCB943281877637E001851FD /* holler.png in Resources */,
+				FC4C3F4B187E3D2300FE0BAD /* back.png in Resources */,
 				FCB94330187767D7001851FD /* world.png in Resources */,
 				FCB9430E18769E0D001851FD /* gradient5.png in Resources */,
+				FC4C3F4F187E3D2F00FE0BAD /* calendar.png in Resources */,
+				FC4C3F4C187E3D2300FE0BAD /* back@2x.png in Resources */,
 				FCB9430C18769E0D001851FD /* gradient3.png in Resources */,
 				FCB943231877630E001851FD /* homeNavBar.png in Resources */,
 				FCB9430918769E0D001851FD /* gradient0.png in Resources */,
@@ -411,10 +450,16 @@
 				FCB9430A18769E0D001851FD /* gradient1.png in Resources */,
 				FCB942D31876880B001851FD /* InfoPlist.strings in Resources */,
 				FCC524E4187CC2490025BEEB /* alicia.png in Resources */,
+				FC4C3F58187E3D7500FE0BAD /* compass@2x.png in Resources */,
+				FC4C3F53187E3D3D00FE0BAD /* compassC.png in Resources */,
 				FCB9432B18776705001851FD /* settings@2x.png in Resources */,
+				FC4C3F57187E3D7500FE0BAD /* compass.png in Resources */,
 				FCB9430D18769E0D001851FD /* gradient4.png in Resources */,
+				FC4C3F5B187E3FE800FE0BAD /* bubbleC.png in Resources */,
 				FCB942DC1876880B001851FD /* Main.storyboard in Resources */,
+				FC4C3F5C187E3FE800FE0BAD /* bubbleC@2x.png in Resources */,
 				FCB94340187A640C001851FD /* zuck.jpg in Resources */,
+				FC4C3F54187E3D3D00FE0BAD /* compassC@2x.png in Resources */,
 				FCB9430B18769E0D001851FD /* gradient2.png in Resources */,
 				FCB9432F187767D7001851FD /* world@2x.png in Resources */,
 				FCB943271877637E001851FD /* holler@2x.png in Resources */,
@@ -446,6 +491,7 @@
 				FCB942D51876880B001851FD /* main.m in Sources */,
 				FCB9433D18777726001851FD /* EventDetailsViewController.m in Sources */,
 				FCB9431E18776189001851FD /* LoginViewController.m in Sources */,
+				FC4C3F5F187E406600FE0BAD /* EventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

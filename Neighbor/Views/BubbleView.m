@@ -68,24 +68,16 @@
         [aPath addLineToPoint:CGPointMake(10.0, 50.0)];
         boxRect = CGRectMake(roundf(self.bounds.size.width - boxWidth) / 2.0f+10.0f, roundf(self.bounds.size.height - boxHeight) / 2.0f+20.0f, boxWidth-10.0f, boxHeight-30.0f);
     }
-    
-    
     [aPath closePath];
     if(self.bubbleBackgroundColor == nil) {
         [[UIColor colorWithWhite:0.8f alpha:0.9f] setFill];
     } else {
         [[UIColor blueColor] setFill];
     }
-    
     [aPath fill];
-    
-
     
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:boxRect cornerRadius:10.0f];
     [roundedRect fill];
-    
-    
-
 }
 
 
