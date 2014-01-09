@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EventDetailsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *hostSays;
+@property (weak, nonatomic) IBOutlet BubbleView *detailsView;
 
 @end

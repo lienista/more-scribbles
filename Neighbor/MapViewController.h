@@ -10,7 +10,6 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *eventScrollView;
-@property (nonatomic, strong) UIScrollView *scrollview;
+
 
 @end

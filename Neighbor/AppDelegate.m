@@ -65,7 +65,7 @@
     colorView.alpha = .5f;
     colorView.backgroundColor = barColor;
     
-    UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:32.0f];
+    UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
     
     UIColor* textColor = [UIColor whiteColor];
     NSDictionary *barTitleAttributes = @{ NSForegroundColorAttributeName : textColor,
@@ -81,9 +81,6 @@
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     [[UINavigationBar appearance] setTitleTextAttributes:barTitleAttributes];
     [[UITabBar appearance] setBarTintColor:textColor];
-    
-    
-    
     
     //segmented control
     
