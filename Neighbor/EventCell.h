@@ -11,8 +11,4 @@
 @interface EventCell : UITableViewCell
 
 
-
-@property (nonatomic, weak) IBOutlet UILabel *eventLabel;
-@property (nonatomic, weak) IBOutlet UIImage *hostImage;
-
 @end

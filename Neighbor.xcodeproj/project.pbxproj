@@ -22,6 +22,12 @@
 		FC4C3F5F187E406600FE0BAD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C3F5E187E406600FE0BAD /* EventViewController.m */; };
 		FC4C3F62187E945800FE0BAD /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C3F61187E945800FE0BAD /* ChatViewController.m */; };
 		FC4C3F65187E9A0F00FE0BAD /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4C3F64187E9A0F00FE0BAD /* EventCell.m */; };
+		FCB527CB188019DC00EC50EC /* checkmarkC.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527C5188019DC00EC50EC /* checkmarkC.png */; };
+		FCB527CC188019DC00EC50EC /* checkmarkC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527C6188019DC00EC50EC /* checkmarkC@2x.png */; };
+		FCB527CD188019DC00EC50EC /* checkmarkedBorderlessC.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527C7188019DC00EC50EC /* checkmarkedBorderlessC.png */; };
+		FCB527CE188019DC00EC50EC /* checkmarkedBorderlessC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527C8188019DC00EC50EC /* checkmarkedBorderlessC@2x.png */; };
+		FCB527CF188019DC00EC50EC /* checkmarkedC.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527C9188019DC00EC50EC /* checkmarkedC.png */; };
+		FCB527D0188019DC00EC50EC /* checkmarkedC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB527CA188019DC00EC50EC /* checkmarkedC@2x.png */; };
 		FCB942C91876880B001851FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942C81876880B001851FD /* Foundation.framework */; };
 		FCB942CB1876880B001851FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942CA1876880B001851FD /* CoreGraphics.framework */; };
 		FCB942CD1876880B001851FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB942CC1876880B001851FD /* UIKit.framework */; };
@@ -100,6 +106,12 @@
 		FC4C3F61187E945800FE0BAD /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		FC4C3F63187E9A0F00FE0BAD /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		FC4C3F64187E9A0F00FE0BAD /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		FCB527C5188019DC00EC50EC /* checkmarkC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkC.png; sourceTree = "<group>"; };
+		FCB527C6188019DC00EC50EC /* checkmarkC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkC@2x.png"; sourceTree = "<group>"; };
+		FCB527C7188019DC00EC50EC /* checkmarkedBorderlessC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkedBorderlessC.png; sourceTree = "<group>"; };
+		FCB527C8188019DC00EC50EC /* checkmarkedBorderlessC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkedBorderlessC@2x.png"; sourceTree = "<group>"; };
+		FCB527C9188019DC00EC50EC /* checkmarkedC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkedC.png; sourceTree = "<group>"; };
+		FCB527CA188019DC00EC50EC /* checkmarkedC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmarkedC@2x.png"; sourceTree = "<group>"; };
 		FCB942C51876880B001851FD /* Neighbor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neighbor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB942C81876880B001851FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FCB942CA1876880B001851FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -350,6 +362,12 @@
 		FCB94320187762F7001851FD /* icons-colored */ = {
 			isa = PBXGroup;
 			children = (
+				FCB527C5188019DC00EC50EC /* checkmarkC.png */,
+				FCB527C6188019DC00EC50EC /* checkmarkC@2x.png */,
+				FCB527C7188019DC00EC50EC /* checkmarkedBorderlessC.png */,
+				FCB527C8188019DC00EC50EC /* checkmarkedBorderlessC@2x.png */,
+				FCB527C9188019DC00EC50EC /* checkmarkedC.png */,
+				FCB527CA188019DC00EC50EC /* checkmarkedC@2x.png */,
 				FC4C3F59187E3FE800FE0BAD /* bubbleC.png */,
 				FC4C3F5A187E3FE800FE0BAD /* bubbleC@2x.png */,
 				FC4C3F51187E3D3D00FE0BAD /* compassC.png */,
@@ -450,6 +468,7 @@
 				FCB943181876B7B1001851FD /* Climacons.ttf in Resources */,
 				FCB943281877637E001851FD /* holler.png in Resources */,
 				FC4C3F4B187E3D2300FE0BAD /* back.png in Resources */,
+				FCB527CF188019DC00EC50EC /* checkmarkedC.png in Resources */,
 				FCB94330187767D7001851FD /* world.png in Resources */,
 				FCB9430E18769E0D001851FD /* gradient5.png in Resources */,
 				FC4C3F4F187E3D2F00FE0BAD /* calendar.png in Resources */,
@@ -459,16 +478,21 @@
 				FCB9430918769E0D001851FD /* gradient0.png in Resources */,
 				FCB9430F18769E0D001851FD /* gradient6.png in Resources */,
 				FCB943171876B7AE001851FD /* Lobster.otf in Resources */,
+				FCB527CC188019DC00EC50EC /* checkmarkC@2x.png in Resources */,
 				FCB9430818769E0D001851FD /* gradient7.png in Resources */,
 				FCC524E5187CC2490025BEEB /* alicia@2x.png in Resources */,
+				FCB527D0188019DC00EC50EC /* checkmarkedC@2x.png in Resources */,
+				FCB527CB188019DC00EC50EC /* checkmarkC.png in Resources */,
 				FCB9431018769E0D001851FD /* gradient8.png in Resources */,
 				FCB943241877630E001851FD /* homeNavBar@2x.png in Resources */,
 				FCB943161876B7AB001851FD /* League_Gothic.otf in Resources */,
 				FCB9432C18776705001851FD /* settings.png in Resources */,
+				FCB527CD188019DC00EC50EC /* checkmarkedBorderlessC.png in Resources */,
 				FCB9430A18769E0D001851FD /* gradient1.png in Resources */,
 				FCB942D31876880B001851FD /* InfoPlist.strings in Resources */,
 				FCC524E4187CC2490025BEEB /* alicia.png in Resources */,
 				FC4C3F58187E3D7500FE0BAD /* compass@2x.png in Resources */,
+				FCB527CE188019DC00EC50EC /* checkmarkedBorderlessC@2x.png in Resources */,
 				FC4C3F53187E3D3D00FE0BAD /* compassC.png in Resources */,
 				FCB9432B18776705001851FD /* settings@2x.png in Resources */,
 				FC4C3F57187E3D7500FE0BAD /* compass.png in Resources */,
