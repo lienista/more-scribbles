@@ -1,25 +1,24 @@
 //
-//  EventViewController.m
+//  ChatViewController.m
 //  Neighbor
 //
-//  Created by Lien Nguyen on 1/8/14.
+//  Created by Lien Nguyen on 1/9/14.
 //  Copyright (c) 2014 Lienne Nguyen. All rights reserved.
 //
 
-#import "EventViewController.h"
+#import "ChatViewController.h"
 
-@interface EventViewController ()
+@interface ChatViewController ()
 
 @end
 
-@implementation EventViewController
+@implementation ChatViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-//        locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
-//        locationCell.photoImageView.clipsToBounds = YES; locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
+        self.tableView.separatorColor = [UIColor blueColor];
     }
     return self;
 }
@@ -41,6 +40,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 14;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ChatCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

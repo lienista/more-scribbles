@@ -57,23 +57,6 @@
 
 }
 
-//-(void) viewDidLayoutSubviews {
-//
-//    [super viewDidLayoutSubviews];
-//
-//    [self setText];
-//    NSString *textR = @"I need this text to show up on autolayout so that i could continue working";
-//    self.hostSays.text = textR;
-//    self.hostSays.textColor = [UIColor whiteColor];
-//   // [self.view addSubview:self.detailsView];
-//    
-//    
-//    [self.view bringSubviewToFront:self.hostSays];
-//    [self.view layoutSubviews];
-//    
-//}
-
-
 
 - (void) setText
 {
