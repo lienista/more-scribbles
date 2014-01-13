@@ -58,35 +58,32 @@
 
 - (void) setCustomStyle {
     //self.window.tintColor = UIColorFromRGB(0x1A42E8,1);
-    UIColor *barColor = UIColorFromRGB(0x1A42E8,1);
+    //UIColor *barColor = UIColorFromRGB(0x1A42E8,1);
+    //UIColor *barBackgroundColor = [UIColor whiteColor];
     
     UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -22.f, 320.f, 64.f)];
     colorView.opaque = NO;
     colorView.alpha = .5f;
-    colorView.backgroundColor = barColor;
+    colorView.backgroundColor = BARBACKGROUNDCOLOR;
     
     UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
-    
-    UIColor* textColor = [UIColor whiteColor];
-    NSDictionary *barTitleAttributes = @{ NSForegroundColorAttributeName : textColor,
-                                          NSFontAttributeName : font,
-                                          NSStrokeWidthAttributeName : [NSNumber numberWithFloat:-2.0],
-                                          NSStrokeColorAttributeName : [UIColor lightGrayColor]
+
+    NSDictionary *barTitleAttributes = @{ NSForegroundColorAttributeName : BARTEXTCOLOR, NSFontAttributeName : font, NSStrokeWidthAttributeName : [NSNumber numberWithFloat:-2.0], NSStrokeColorAttributeName : BARTEXTCOLOR
                                           };
     
     [[[UINavigationBar appearance] layer] insertSublayer:colorView.layer above:0];
-    
-    [[UINavigationBar appearance] setBarTintColor: barColor];
-    [[UINavigationBar appearance] setTintColor:textColor];
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setTintColor:BARTEXTCOLOR];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
     [[UINavigationBar appearance] setTitleTextAttributes:barTitleAttributes];
-    [[UITabBar appearance] setBarTintColor:textColor];
+    [[UITabBar appearance] setTintColor:BARTEXTCOLOR];
     
     //segmented control
-    
-    [[UISegmentedControl appearance] setBackgroundColor:[UIColor whiteColor]];
-    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-    [[UISegmentedControl appearance] setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
+    NSDictionary *selectedAttributes = @{NSForegroundColorAttributeName:BARBACKGROUNDCOLOR, NSBackgroundColorAttributeName:BARTEXTCOLOR};
+    NSDictionary *normalAttributes = @{NSForegroundColorAttributeName:BARTEXTCOLOR};
+    [[UISegmentedControl appearance] setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
+    [[UISegmentedControl appearance] setTitleTextAttributes:normalAttributes forState:UIControlStateNormal];
+
+    [UISegmentedControl appearance].layer.cornerRadius = 5;
 
 }
 
@@ -94,8 +91,8 @@
 {
     return UIBarPositionTopAttached;
 }
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+//-(UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;
+//}
 
 @end

@@ -11,6 +11,7 @@
 @interface MapSummaryViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *eventScrollView;
 @property (nonatomic, strong) UIScrollView *scrollview;
-
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *city;
 
 @end

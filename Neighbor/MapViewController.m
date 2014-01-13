@@ -53,6 +53,7 @@
         [self hidesBottomBarWhenPushed];
     } else if(y>500 && self.tabBarController.tabBar.isHidden) {
             [self.tabBarController.tabBar setHidden:NO];
+                [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden];
        
     }
 //    else {
@@ -61,9 +62,22 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStyleBordered target: nil action: nil];
-    
+    UIImage *backImage = [UIImage imageNamed:@"back.png"];
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithImage:backImage style: UIBarButtonItemStyleBordered target: nil action: nil];
     self.navigationItem.backBarButtonItem = newBackButton;
+    
+    UISegmentedControl *mapFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"5mi ", @"50mi ", nil]];
+//    mapFilter.frame = CGRectMake(5,150,85,45);
+    //[statFilter setTintColor:[UIColor whiteColor]];
+//    [mapFilter setTintAdjustmentMode:UIViewTintAdjustmentModeDimmed];
+    [mapFilter sizeToFit];
+    [mapFilter setSelectedSegmentIndex:0];
+////    [self.navigationItem.titleView setOpaque:NO];
+//    mapFilter.layer.cornerRadius = 5;
+//    mapFilter.backgroundColor = [UIColor clearColor];
+
+    self.navigationItem.titleView = mapFilter;
+    
 }
 
 //table view data source -

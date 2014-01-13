@@ -9,9 +9,9 @@
 #import "MapSummaryViewController.h"
 
 //square
-#define IMAGESIZE 75
+#define IMAGESIZE 100
 #define IMAGE_OFFSET 5
-#define SCROLLVIEW_ROWS 2
+#define SCROLLVIEW_ROWS 1
 
 @interface MapSummaryViewController ()
 
@@ -48,13 +48,20 @@
     UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(20.0f, 530.0f, 320.0f, 20.0f)];
     UILabel *infoLabel = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 20.0f)];
     
-    infoLabel.text = @"tap on map to hide/reveal top bar";
-    infoLabel.textColor = [UIColor whiteColor];
+    infoLabel.text = @"show action bars";
+    infoLabel.textColor = BARTEXTCOLOR;
     infoLabel.numberOfLines = 0;
     [infoLabel sizeToFit];
     [infoView addSubview:infoLabel];
     [self.view addSubview:infoView];
+    
+    UISegmentedControl *mapSummaryFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"10mi ", @"25mi", nil]];
+    [mapSummaryFilter sizeToFit];
+    [mapSummaryFilter setSelectedSegmentIndex:0];
+    self.navigationItem.titleView = mapSummaryFilter;
 
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +76,6 @@
     
     if(y<=360){
         [self.navigationController setNavigationBarHidden:!self.navigationController.navigationBarHidden];
-        [self.tabBarController.tabBar setHidden:!self.tabBarController.tabBar.isHidden];
         [self hidesBottomBarWhenPushed];
     } else if(y>500 && self.tabBarController.tabBar.isHidden) {
         [self.tabBarController.tabBar setHidden:NO];
@@ -161,9 +167,8 @@
     self.eventScrollView.bounces = YES;
     self.eventScrollView.delegate = self;
     self.eventScrollView.userInteractionEnabled = YES;
-    //self.eventScrollView.clipsToBounds = YES;
     self.eventScrollView.scrollEnabled = YES;
-    self.eventScrollView.backgroundColor = [UIColor grayColor];
+    //self.eventScrollView.backgroundColor = [UIColor grayColor];
     eventImages = [[NSMutableArray alloc] init];
     for(int i=0;i<16;i++) {
         [eventImages addObject:@"alicia.png"];
@@ -174,6 +179,7 @@
             posY = (i==0)?0:1;
             [self addImageWithName:[eventImages objectAtIndex:posX] atX:posX/SCROLLVIEW_ROWS atY:posY] ;
             posX++;
+
         }
         
     }
@@ -194,24 +200,57 @@
     NSLog(@"(x,y) : (%d,%d)",positionX*(IMAGESIZE+IMAGE_OFFSET),positionY*(IMAGESIZE+IMAGE_OFFSET));
     //[self.eventScrollView addSubview:imageView];
     
-    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc] initWithTarget:self
+    UITapGestureRecognizer *imageTap =[[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                action:@selector(handleSingleTap:)];
-    singleTap.numberOfTapsRequired = 1;
-    [imageView addGestureRecognizer:singleTap];
+    imageTap.numberOfTapsRequired = 1;
+    [imageView addGestureRecognizer:imageTap];
+
+    imageView.layer.cornerRadius = IMAGESIZE/2.0f;
+    imageView.layer.masksToBounds = YES;
     [self.eventScrollView addSubview:imageView];
     
-}
+    //Event Details
+    if(SCROLLVIEW_ROWS ==1){
+        UIView *eventInfoView = [[UIView alloc]initWithFrame:CGRectMake(positionX*(IMAGESIZE +IMAGE_OFFSET) , positionY*(IMAGESIZE+IMAGE_OFFSET) +IMAGESIZE, IMAGESIZE, IMAGESIZE/2)];
+        UILabel *eventDateLabel = [[UILabel alloc]initWithFrame:CGRectMake(5.0f, 5.0f, IMAGESIZE-10.0f, IMAGESIZE/2.0f-10.0f)];
+    
+        UIFont* font = [UIFont fontWithName:@"LeagueGothic" size:18.0f];
+        UIColor* textColor = [UIColor darkGrayColor];
+        NSDictionary *attrs = @{ NSForegroundColorAttributeName : textColor,
+                                 NSFontAttributeName : font,
+                                 NSStrokeWidthAttributeName : [NSNumber numberWithFloat:0],
+                                 NSStrokeColorAttributeName : [UIColor grayColor]
+                                 };
+        self.date = [@"Mon 1/21\n" uppercaseString];
+        eventDateLabel.text = self.date;
+        NSAttributedString *attrTitleString = [[NSAttributedString alloc]
+                                               initWithString:eventDateLabel.text
+                                               attributes:attrs];
+        eventDateLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        eventDateLabel.numberOfLines = 0;
+        eventDateLabel.attributedText = attrTitleString;
+        
+        UIFont *font2 = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
+        NSDictionary *attrs2 = @{ NSForegroundColorAttributeName : textColor,
+                   NSFontAttributeName : font2,
+                   NSStrokeWidthAttributeName : [NSNumber numberWithFloat:0],
+                   NSStrokeColorAttributeName : [UIColor grayColor]
+                   };
+        UILabel *eventCityLabel = [[UILabel alloc]initWithFrame:CGRectMake(5.0f, 20.0f, IMAGESIZE-10.0f, IMAGESIZE/2.0f-10.0f)];
+        self.city = @"Mountain View";
+        eventCityLabel.text = self.city;
+        NSAttributedString *attrEventString = [[NSAttributedString alloc]
+                                               initWithString:eventCityLabel.text
+                                               attributes:attrs2];
+        eventCityLabel.attributedText = attrEventString;
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView1{
-//
-//    NSLog(@"Content offset %f",self.eventScrollView.contentOffset.x);
-//    if (scrollView1.contentOffset.x <=([eventImages count]-1)*IMAGESIZE) {
-//        [self.eventScrollView setContentOffset:CGPointMake(([eventImages count]+([eventImages count]-1))*IMAGESIZE, 0)];
-//    }
-//    else if (scrollView1.contentOffset.x >=(2*([eventImages count]))*IMAGESIZE) {
-//        [self.eventScrollView setContentOffset:CGPointMake(([eventImages count])*IMAGESIZE, 0)];
-//    }
-//}
+        [eventInfoView addSubview:eventDateLabel];
+        [eventInfoView addSubview:eventCityLabel];
+        [self.eventScrollView addGestureRecognizer:imageTap];
+
+        [self.eventScrollView addSubview:eventInfoView];
+    }
+}
 
 
 //- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView1{

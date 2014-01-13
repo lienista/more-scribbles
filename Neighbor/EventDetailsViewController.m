@@ -26,31 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor whiteColor];
-
-//    [self setText];
-//
-//    NSString *textR = @"I need this text to show up on autolayout so that i could continue working";
-//    self.hostSays.text = textR;
-//    self.hostSays.textColor = [UIColor grayColor];
-//    
-//    [self.view addSubview:self.detailsView];
-//    [self.detailsView addSubview:self.hostSays];
+    [self.navigationItem.titleView setOpaque:NO];
+    [self setText];
 
 }
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
     [self setText];
-    
-//    NSString *textR = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-//    self.hostSays.text = textR;
-//    self.hostSays.textColor = [UIColor darkGrayColor];
-//    [self.view addSubview:self.detailsView];
-//    [self.detailsView addSubview:self.hostSays];
-
-    
-
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -60,14 +42,17 @@
 
 - (void) setText
 {
-    NSString *textR = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+    [self.navigationItem.titleView setOpaque:NO];
+    [UISegmentedControl appearance].layer.cornerRadius = 5;
+    
+    NSString *textR = @"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.";
 
-    if(textR.length > 490) {
-        NSRange stringRange = {0,490};
+    if(textR.length > 370) {
+        NSRange stringRange = {0,370};
         textR = [textR substringWithRange:stringRange];
         textR = [NSString stringWithFormat:@"%@ ...", textR];
     }
-    UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:11.0f];
+    UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:13.0f];
     
     
     CGSize constraint = CGSizeMake(260,9999);
@@ -76,7 +61,7 @@
                                        attributes:@{NSFontAttributeName:font}
                                           context:nil];
     
-    BubbleView *hostView = [[BubbleView alloc] initWithFrame:CGRectMake(20.0f, 140.0f, textRect.size.width+20, textRect.size.height+50)];
+    BubbleView *hostView = [[BubbleView alloc] initWithFrame:CGRectMake(20.0f, 180.0f, textRect.size.width+20, textRect.size.height+50)];
     hostView.bubbleWidth = textRect.size.width+20;
     hostView.bubbleHeight = textRect.size.height+50;
     hostView.text = textR;
@@ -111,6 +96,49 @@
     [self.detailsView addSubview:self.hostSays];
     
     
+}
+
+- (UIView *)addBackgroundViewBelowSegmentedControl:(UISegmentedControl *)segmentedControl {
+    CGFloat autosizedWidth = CGRectGetWidth(segmentedControl.bounds);
+    autosizedWidth -= (segmentedControl.numberOfSegments - 1); // ignore the 1pt. borders between segments
+    
+    NSInteger numberOfAutosizedSegmentes = 0;
+    NSMutableArray *segmentWidths = [NSMutableArray arrayWithCapacity:segmentedControl.numberOfSegments];
+    for (NSInteger i = 0; i < segmentedControl.numberOfSegments; i++) {
+        CGFloat width = [segmentedControl widthForSegmentAtIndex:i];
+        if (width == 0.0f) {
+            // auto sized
+            numberOfAutosizedSegmentes++;
+            [segmentWidths addObject:[NSNull null]];
+        }
+        else {
+            // manually sized
+            autosizedWidth -= width;
+            [segmentWidths addObject:@(width)];
+        }
+    }
+    
+    CGFloat autoWidth = floorf(autosizedWidth/(float)numberOfAutosizedSegmentes);
+    CGFloat realWidth = (segmentedControl.numberOfSegments-1);      // add all the 1pt. borders between the segments
+    for (NSInteger i = 0; i < [segmentWidths count]; i++) {
+        id width = segmentWidths[i];
+        if (width == [NSNull null]) {
+            realWidth += autoWidth;
+        }
+        else {
+            realWidth += [width floatValue];
+        }
+    }
+    
+    CGRect whiteViewFrame = segmentedControl.frame;
+    whiteViewFrame.size.width = realWidth;
+    
+    UIView *whiteView = [[UIView alloc] initWithFrame:whiteViewFrame];
+    whiteView.backgroundColor = [UIColor clearColor];
+    //[whiteView setTintColor: BARCOLOR];
+    whiteView.layer.cornerRadius = 5.0f;
+    [self.view insertSubview:whiteView belowSubview:segmentedControl];
+    return whiteView;
 }
 
 - (void)didReceiveMemoryWarning

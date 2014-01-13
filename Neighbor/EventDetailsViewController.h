@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BubbleView.h"
 
 @interface EventDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *hostSays;
