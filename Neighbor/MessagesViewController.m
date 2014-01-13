@@ -32,6 +32,12 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.friendPhoto.layer.cornerRadius = 30.0f;
+    self.friendPhoto.layer.masksToBounds = YES;
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    
+//    self.friendMessage.text = @"message from a friend";
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,6 +70,11 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70.0f;
 }
 
 /*

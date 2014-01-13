@@ -17,7 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *hostPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UIButton *goingButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (weak, nonatomic) IBOutlet UIButton *goingButton;
+
 
 @end

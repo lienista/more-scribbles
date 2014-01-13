@@ -20,5 +20,10 @@
 
 #define UIColorFromRGB(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
 
-#define BARTEXTCOLOR UIColorFromRGB(0x895F02, 1)
+#define BARTEXTCOLOR UIColorFromRGB(0x4063AE, 1)
 #define BARBACKGROUNDCOLOR UIColorFromRGB(0xFFFFFF,1)
+#define BUTTONBORDERCOLOR UIColorFromRGB(0x3B7BBE,1)
+//#define BUTTONBACKGROUNDCOLOR UIColorFromRGB(0x563434,1)
+//#define BARTEXTCOLOR UIColorFromRGB(0x684716, 1)
+#define BUTTONBACKGROUNDCOLOR UIColorFromRGB(0x4063AE,1)
+

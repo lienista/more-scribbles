@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (CustomButton)
-@property (nonatomic, strong) NSString *buttonTitle;
 
 - (void) customizeButton;
 

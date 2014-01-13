@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eb9-Mc-0M5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931" y="-1101"/>
+            <point key="canvasLocation" x="2457" y="-1101"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="4L7-6H-eaI">
@@ -319,13 +319,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save me a spot. I promise I won't flake" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-tH-gXZ">
-                                <rect key="frame" x="180" y="470" width="100" height="30"/>
+                                <rect key="frame" x="180" y="485" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm interested, but will decide later" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-Rm-8p5">
-                                <rect key="frame" x="40" y="470" width="100" height="30"/>
+                                <rect key="frame" x="40" y="485" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <nil key="highlightedColor"/>
@@ -355,6 +355,8 @@
                     <connections>
                         <outlet property="dateLabel" destination="AlI-bg-Sd5" id="cK4-fr-sor"/>
                         <outlet property="detailsView" destination="ROu-pp-SnC" id="TfC-KB-UJq"/>
+                        <outlet property="followButton" destination="KJW-ck-2Vq" id="q4k-us-w18"/>
+                        <outlet property="goingButton" destination="z3k-kJ-WUO" id="Ptg-MN-WdF"/>
                         <outlet property="hostPhoto" destination="Ujp-iS-cBy" id="Shn-Fc-V7R"/>
                         <outlet property="hostSays" destination="BC3-gv-myQ" id="43C-ao-MWI"/>
                         <outlet property="locationLabel" destination="hR4-mh-aR3" id="8P0-tJ-d8n"/>
@@ -376,9 +378,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Hve-Oi-9jD" kind="relationship" relationship="viewControllers" id="JaS-3W-upz"/>
+                        <segue destination="2It-8J-id2" kind="relationship" relationship="viewControllers" id="dT7-SE-PmV"/>
                         <segue destination="ttJ-aT-McY" kind="relationship" relationship="viewControllers" id="dt5-bh-Fg0"/>
-                        <segue destination="0UW-c7-OTF" kind="relationship" relationship="viewControllers" id="dT7-SE-PmV"/>
-                        <segue destination="jjp-th-p18" kind="relationship" relationship="viewControllers" id="PR9-aS-BNP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OP-d8-YTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,7 +697,7 @@
             </objects>
             <point key="canvasLocation" x="958" y="958"/>
         </scene>
-        <!--View Controller - Messages-->
+        <!--View Controller - Announce an Event-->
         <scene sceneID="ssA-u0-aXI">
             <objects>
                 <viewController id="0UW-c7-OTF" sceneMemberID="viewController">
@@ -709,17 +710,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="messages.png" id="Thn-GZ-UZF"/>
+                    <navigationItem key="navigationItem" title="Announce an Event" id="hn5-ne-1JC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIV-zd-zB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="414" y="-1147"/>
+            <point key="canvasLocation" x="940" y="-1147"/>
         </scene>
-        <!--Navigation Controller - Post-->
+        <!--Navigation Controller - Messages-->
         <scene sceneID="jJg-ja-vHG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ttJ-aT-McY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="holler.png" id="mYm-xL-OXY"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messages.png" id="mYm-xL-OXY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vh8-PU-fxZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -733,6 +734,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sbg-iU-fDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="432" y="958"/>
+        </scene>
+        <!--Navigation Controller - Post-->
+        <scene sceneID="Oqw-JV-gXB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2It-8J-id2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Post" image="holler.png" id="Thn-GZ-UZF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="woL-a0-R4z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0UW-c7-OTF" kind="relationship" relationship="rootViewController" id="blZ-6e-KEY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aga-sZ-jrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="-1147"/>
         </scene>
     </scenes>
     <resources>

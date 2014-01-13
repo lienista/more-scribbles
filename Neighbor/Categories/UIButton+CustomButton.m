@@ -10,18 +10,20 @@
 
 @implementation UIButton (CustomButton)
 
-@dynamic buttonTitle;
-
 - (void) customizeButton
 {
     
-    CGRect bRect = CGRectMake(10.0f, 5.0f, 120.0f, 60.0f);
-    UIButton *newButton = [[UIButton alloc] initWithFrame:bRect];
-    newButton.backgroundColor = BARTEXTCOLOR;
-    newButton.buttonTitle = @"Follow";
-    newButton.layer.cornerRadius = 10.0f;
-    newButton.layer.masksToBounds = YES;
+//    UIImage *image = [[UIImage imageNamed:@"PriceButton"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+//    [self setBackgroundImage:image forState:UIControlStateNormal];
+//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    self.tintColor = BARTEXTCOLOR;
+    [self setBackgroundColor:BUTTONBACKGROUNDCOLOR];
+    [self setTintColor:BARBACKGROUNDCOLOR];
 
+    self.layer.cornerRadius = 20.0f;
+    self.layer.masksToBounds = YES;
+    self.layer.borderColor = BUTTONBORDERCOLOR.CGColor;
+    self.layer.borderWidth = 2.0;
 }
 
 @end

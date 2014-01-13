@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MessagesViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIImageView *friendPhoto;
+@property (weak, nonatomic) IBOutlet UILabel *friendMessage;
 
 @end
