@@ -45,6 +45,7 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    self.view.tintColor = [UIColor blackColor];
     [self customizeBackButton];
 }
 

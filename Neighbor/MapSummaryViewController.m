@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideShowNavigation:)];
     tap.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tap];
@@ -63,6 +63,28 @@
     
     
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -170,7 +192,7 @@
     self.eventScrollView.scrollEnabled = YES;
     //self.eventScrollView.backgroundColor = [UIColor grayColor];
     eventImages = [[NSMutableArray alloc] init];
-    for(int i=0;i<16;i++) {
+    for(int i=0;i<20;i++) {
         [eventImages addObject:@"alicia.png"];
     }
     for(int j=0;j<([eventImages count]/SCROLLVIEW_ROWS);j++){
@@ -196,9 +218,7 @@
     UIImage *image = [UIImage imageNamed:imageString];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.userInteractionEnabled = YES;
-    imageView.frame = CGRectMake(positionX*(IMAGESIZE+IMAGE_OFFSET), positionY*(IMAGESIZE+IMAGE_OFFSET), IMAGESIZE, IMAGESIZE);
-    NSLog(@"(x,y) : (%d,%d)",positionX*(IMAGESIZE+IMAGE_OFFSET),positionY*(IMAGESIZE+IMAGE_OFFSET));
-    //[self.eventScrollView addSubview:imageView];
+    imageView.frame = CGRectMake(positionX*(IMAGESIZE+IMAGE_OFFSET), positionY*(IMAGESIZE+IMAGE_OFFSET)+5.0, IMAGESIZE, IMAGESIZE);
     
     UITapGestureRecognizer *imageTap =[[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                action:@selector(handleSingleTap:)];

@@ -322,12 +322,14 @@
                                 <rect key="frame" x="180" y="485" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I'm interested, but will decide later" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-Rm-8p5">
                                 <rect key="frame" x="40" y="485" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-Lm-JSx">
@@ -697,7 +699,7 @@
             </objects>
             <point key="canvasLocation" x="958" y="958"/>
         </scene>
-        <!--View Controller - Announce an Event-->
+        <!--View Controller - Post an Event-->
         <scene sceneID="ssA-u0-aXI">
             <objects>
                 <viewController id="0UW-c7-OTF" sceneMemberID="viewController">
@@ -710,7 +712,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Announce an Event" id="hn5-ne-1JC"/>
+                    <navigationItem key="navigationItem" title="Post an Event" id="hn5-ne-1JC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIV-zd-zB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
