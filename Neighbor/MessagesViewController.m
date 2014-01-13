@@ -1,25 +1,24 @@
 //
-//  EventViewController.m
+//  MessagesViewController.m
 //  Neighbor
 //
-//  Created by Lienne Nguyen on 1/8/14.
+//  Created by Lienne Nguyen on 1/12/14.
 //  Copyright (c) 2014 Lienne Nguyen. All rights reserved.
 //
 
-#import "EventViewController.h"
+#import "MessagesViewController.h"
 
-@interface EventViewController ()
+@interface MessagesViewController ()
 
 @end
 
-@implementation EventViewController
+@implementation MessagesViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-//        locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
-//        locationCell.photoImageView.clipsToBounds = YES; locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
+        // Custom initialization
     }
     return self;
 }
@@ -41,6 +40,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 14;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"MessageCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.

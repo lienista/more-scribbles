@@ -62,8 +62,8 @@
     //UIColor *barBackgroundColor = [UIColor whiteColor];
     
     UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -22.f, 320.f, 64.f)];
-    colorView.opaque = NO;
-    colorView.alpha = .5f;
+//    colorView.opaque = NO;
+//    colorView.alpha = .5f;
     colorView.backgroundColor = BARBACKGROUNDCOLOR;
     
     UIFont* font = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
@@ -82,8 +82,8 @@
     NSDictionary *normalAttributes = @{NSForegroundColorAttributeName:BARTEXTCOLOR};
     [[UISegmentedControl appearance] setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
     [[UISegmentedControl appearance] setTitleTextAttributes:normalAttributes forState:UIControlStateNormal];
-
-    [UISegmentedControl appearance].layer.cornerRadius = 5;
+    [UISegmentedControl appearance].layer.cornerRadius = 5.0f;
+    [[UISegmentedControl appearance] setTintColor:BARTEXTCOLOR];
 
 }
 

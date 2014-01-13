@@ -72,7 +72,7 @@
                                 <segment title="Second"/>
                             </segments>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="More" id="HRX-tk-9CX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="HRX-tk-9CX">
                             <connections>
                                 <segue destination="ycW-at-xHw" kind="push" identifier="MapDetailsSegue" id="bFO-8p-MuX"/>
                             </connections>
@@ -248,7 +248,7 @@
         <!--Event Details View Controller-->
         <scene sceneID="Gdb-FE-DKe">
             <objects>
-                <viewController id="trX-Ii-lQG" customClass="EventDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailsVC" id="trX-Ii-lQG" customClass="EventDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zFO-6x-p06"/>
                         <viewControllerLayoutGuide type="bottom" id="dRk-dX-UBJ"/>
@@ -258,7 +258,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alicia.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ujp-iS-cBy">
-                                <rect key="frame" x="30" y="124" width="61" height="60"/>
+                                <rect key="frame" x="31" y="120" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJW-ck-2Vq">
@@ -285,13 +285,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlI-bg-Sd5">
-                                <rect key="frame" x="106" y="124" width="184" height="21"/>
+                                <rect key="frame" x="130" y="120" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR4-mh-aR3">
-                                <rect key="frame" x="106" y="153" width="184" height="21"/>
+                                <rect key="frame" x="130" y="150" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -310,7 +310,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmarkC.png" translatesAutoresizingMaskIntoConstraints="NO" id="XjL-Yj-ZIq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checkmarkGrayC.png" translatesAutoresizingMaskIntoConstraints="NO" id="XjL-Yj-ZIq">
                                 <rect key="frame" x="60" y="372" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -331,21 +331,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CUz-Lm-JSx">
-                                <rect key="frame" x="80" y="82" width="161" height="29"/>
+                                <rect key="frame" x="40" y="64" width="242" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Details"/>
                                     <segment title="Comments"/>
+                                    <segment title="Map"/>
                                 </segments>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date.png" translatesAutoresizingMaskIntoConstraints="NO" id="HnQ-iH-zhP">
+                                <rect key="frame" x="100" y="120" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="4zm-aX-cEJ">
+                                <rect key="frame" x="100" y="151" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gya-EG-Aqb"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="dateLabel" destination="AlI-bg-Sd5" id="cK4-fr-sor"/>
                         <outlet property="detailsView" destination="ROu-pp-SnC" id="TfC-KB-UJq"/>
+                        <outlet property="hostPhoto" destination="Ujp-iS-cBy" id="Shn-Fc-V7R"/>
                         <outlet property="hostSays" destination="BC3-gv-myQ" id="43C-ao-MWI"/>
+                        <outlet property="locationLabel" destination="hR4-mh-aR3" id="8P0-tJ-d8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xov-Nt-Ye0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,16 +647,16 @@
             </objects>
             <point key="canvasLocation" x="432" y="244"/>
         </scene>
-        <!--Chat View Controller - Messages-->
+        <!--Messages View Controller - Messages-->
         <scene sceneID="bnN-Tu-IJ1">
             <objects>
-                <tableViewController id="zvQ-im-YYJ" customClass="ChatViewController" sceneMemberID="viewController">
+                <tableViewController id="zvQ-im-YYJ" customClass="MessagesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YWw-u3-XQs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChatCell" rowHeight="70" id="dRc-kn-eGo">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="70" id="dRc-kn-eGo">
                                 <rect key="frame" x="0.0" y="86" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRc-kn-eGo" id="szb-5p-pH5">
@@ -665,7 +677,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCC-bk-rJM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alicia.png" translatesAutoresizingMaskIntoConstraints="NO" id="TCC-bk-rJM">
                                             <rect key="frame" x="10" y="5" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -697,7 +709,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="holler.png" id="Thn-GZ-UZF"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="messages.png" id="Thn-GZ-UZF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIV-zd-zB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -726,10 +738,14 @@
     <resources>
         <image name="alicia.png" width="60" height="60"/>
         <image name="checkmarkC.png" width="61" height="61"/>
+        <image name="checkmarkGrayC.png" width="61" height="61"/>
         <image name="checkmarkedBorderlessC.png" width="31" height="31"/>
         <image name="checkmarkedC.png" width="61" height="61"/>
+        <image name="date.png" width="21" height="21"/>
         <image name="holler.png" width="31" height="31"/>
         <image name="homeNavBar.png" width="23" height="23"/>
+        <image name="location.png" width="21" height="21"/>
+        <image name="messages.png" width="31" height="31"/>
         <image name="world.png" width="31" height="31"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

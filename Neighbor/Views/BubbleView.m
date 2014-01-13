@@ -14,11 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setOpaque:NO];
-
+        [self setOpaque:YES];
         [self setBackgroundColor:[UIColor clearColor]];
-        
-            }
+    }
     return self;
 }
 
@@ -39,7 +37,6 @@
     CGFloat boxHeight = self.bubbleHeight;
     CGRect boxRect;
     
-    NSLog(@"text, width, height: %@, %f, %f", self.text, self.bubbleWidth, self.bubbleHeight);
     //draw caret
     UIBezierPath *aPath = [UIBezierPath bezierPath];
 

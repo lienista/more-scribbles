@@ -2,7 +2,7 @@
 //  EventCell.m
 //  Neighbor
 //
-//  Created by Lien Nguyen on 1/9/14.
+//  Created by Lienne Nguyen on 1/9/14.
 //  Copyright (c) 2014 Lienne Nguyen. All rights reserved.
 //
 

@@ -291,8 +291,22 @@
     
     NSLog(@"image tapped at location (%f, %f)", x,y);
     
+    EventDetailsViewController *eventDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EventDetailsVC"];
+    [self customizeSegmentedControl];
+    [self customizeBackButton];
+
+    [self.navigationController pushViewController:eventDetailsVC animated:YES];
+    
 }
 
-
+-(void) customizeSegmentedControl
+{
+    //segmented control
+    NSDictionary *selectedAttributes = @{NSForegroundColorAttributeName:BARBACKGROUNDCOLOR, NSBackgroundColorAttributeName:BARTEXTCOLOR};
+    NSDictionary *normalAttributes = @{NSForegroundColorAttributeName:BARTEXTCOLOR};
+    [[UISegmentedControl appearance] setTitleTextAttributes:selectedAttributes forState:UIControlStateSelected];
+    [[UISegmentedControl appearance] setTitleTextAttributes:normalAttributes forState:UIControlStateNormal];
+    [UISegmentedControl appearance].layer.cornerRadius = 5.0f;
+}
 
 @end
