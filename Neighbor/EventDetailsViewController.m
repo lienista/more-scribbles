@@ -38,6 +38,9 @@
     [self.goingButton customizeButton];
     [self.goingButton addTarget:self action:@selector(goingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
+
+    
+
 }
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:YES];
@@ -79,11 +82,6 @@
     hostView.bubbleWidth = textRect.size.width+20;
     hostView.bubbleHeight = textRect.size.height+50;
     hostView.text = textR;
-
-
-    NSLog(@"size: %f, %f", textRect.size.width, textRect.size.height);
-    
-    NSLog(@"origin: %f, %f - size: %f, %f, backgroundColor: @%@", self.detailsView.frame.origin.x, self.detailsView.frame.origin.y, self.detailsView.frame.size.width, self.detailsView.frame.size.height, self.detailsView.backgroundColor);
    
     UILabel *hostLabel = [[UILabel alloc]initWithFrame:CGRectMake(10.0f,30.0f, textRect.size.width, textRect.size.height)];
     
@@ -99,11 +97,8 @@
                                       initWithString:hostLabel.text
                                       attributes:labelAttributes];
     
-//    self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    self.titleLabel.numberOfLines = 0;
     hostLabel.attributedText = attrString;
     hostLabel.numberOfLines = 0;
-    //[hostView addSubview:hostLabel];
     self.hostSays = hostLabel;
         self.detailsView = hostView;
     [self.view addSubview:self.detailsView];
@@ -112,54 +107,56 @@
     
 }
 
-- (UIView *)addBackgroundViewBelowSegmentedControl:(UISegmentedControl *)segmentedControl {
-    CGFloat autosizedWidth = CGRectGetWidth(segmentedControl.bounds);
-    autosizedWidth -= (segmentedControl.numberOfSegments - 1); // ignore the 1pt. borders between segments
-    
-    NSInteger numberOfAutosizedSegmentes = 0;
-    NSMutableArray *segmentWidths = [NSMutableArray arrayWithCapacity:segmentedControl.numberOfSegments];
-    for (NSInteger i = 0; i < segmentedControl.numberOfSegments; i++) {
-        CGFloat width = [segmentedControl widthForSegmentAtIndex:i];
-        if (width == 0.0f) {
-            // auto sized
-            numberOfAutosizedSegmentes++;
-            [segmentWidths addObject:[NSNull null]];
-        }
-        else {
-            // manually sized
-            autosizedWidth -= width;
-            [segmentWidths addObject:@(width)];
-        }
-    }
-    
-    CGFloat autoWidth = floorf(autosizedWidth/(float)numberOfAutosizedSegmentes);
-    CGFloat realWidth = (segmentedControl.numberOfSegments-1);      // add all the 1pt. borders between the segments
-    for (NSInteger i = 0; i < [segmentWidths count]; i++) {
-        id width = segmentWidths[i];
-        if (width == [NSNull null]) {
-            realWidth += autoWidth;
-        }
-        else {
-            realWidth += [width floatValue];
-        }
-    }
-    
-    CGRect whiteViewFrame = segmentedControl.frame;
-    whiteViewFrame.size.width = realWidth;
-    
-    UIView *whiteView = [[UIView alloc] initWithFrame:whiteViewFrame];
-    whiteView.backgroundColor = [UIColor clearColor];
-    //[whiteView setTintColor: BARCOLOR];
-    whiteView.layer.cornerRadius = 5.0f;
-    [self.view insertSubview:whiteView belowSubview:segmentedControl];
-    return whiteView;
-}
+//- (UIView *)addBackgroundViewBelowSegmentedControl:(UISegmentedControl *)segmentedControl {
+//    CGFloat autosizedWidth = CGRectGetWidth(segmentedControl.bounds);
+//    autosizedWidth -= (segmentedControl.numberOfSegments - 1); // ignore the 1pt. borders between segments
+//    
+//    NSInteger numberOfAutosizedSegmentes = 0;
+//    NSMutableArray *segmentWidths = [NSMutableArray arrayWithCapacity:segmentedControl.numberOfSegments];
+//    for (NSInteger i = 0; i < segmentedControl.numberOfSegments; i++) {
+//        CGFloat width = [segmentedControl widthForSegmentAtIndex:i];
+//        if (width == 0.0f) {
+//            // auto sized
+//            numberOfAutosizedSegmentes++;
+//            [segmentWidths addObject:[NSNull null]];
+//        }
+//        else {
+//            // manually sized
+//            autosizedWidth -= width;
+//            [segmentWidths addObject:@(width)];
+//        }
+//    }
+//    
+//    CGFloat autoWidth = floorf(autosizedWidth/(float)numberOfAutosizedSegmentes);
+//    CGFloat realWidth = (segmentedControl.numberOfSegments-1);      // add all the 1pt. borders between the segments
+//    for (NSInteger i = 0; i < [segmentWidths count]; i++) {
+//        id width = segmentWidths[i];
+//        if (width == [NSNull null]) {
+//            realWidth += autoWidth;
+//        }
+//        else {
+//            realWidth += [width floatValue];
+//        }
+//    }
+//    
+//    CGRect whiteViewFrame = segmentedControl.frame;
+//    whiteViewFrame.size.width = realWidth;
+//    
+//    UIView *whiteView = [[UIView alloc] initWithFrame:whiteViewFrame];
+//    whiteView.backgroundColor = [UIColor clearColor];
+//    whiteView.layer.cornerRadius = 5.0f;
+//    [self.view insertSubview:whiteView belowSubview:segmentedControl];
+//    return whiteView;
+//}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //Dispose of any resources that can be recreated.
 }
+
+
+
 
 - (IBAction)done:(id)sender {
     [self closeScreen];
@@ -171,6 +168,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)followButton:(id)sender {
-}
+
+
 @end

@@ -67,9 +67,9 @@
     }
     [aPath closePath];
     if(self.bubbleBackgroundColor == nil) {
-        [[UIColor colorWithWhite:0.8f alpha:0.9f] setFill];
+        [UIColorFromRGB(0xEFEFEF, 1) setFill];
     } else {
-        [[UIColor blueColor] setFill];
+        [BARTEXTCOLOR setFill];
     }
     [aPath fill];
     

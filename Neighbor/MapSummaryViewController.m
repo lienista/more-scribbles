@@ -208,8 +208,6 @@
     
     self.eventScrollView.contentSize = CGSizeMake(([eventImages count])*IMAGESIZE/SCROLLVIEW_ROWS+45, SCROLLVIEW_ROWS*IMAGESIZE + 40);
     [self.eventScrollView scrollRectToVisible:CGRectMake(0,400,[eventImages count]*IMAGESIZE/SCROLLVIEW_ROWS, SCROLLVIEW_ROWS*IMAGESIZE + 40) animated:NO];
-    //    NSLog(@"scrollview x y: %f,%f", self.eventScrollView.frame.size.width, self.eventScrollView.frame.size.height);
-    //    NSLog(@"Content size %f, %f", self.eventScrollView.contentSize.width, self.eventScrollView.contentSize.height);
     
 }
 
@@ -311,11 +309,11 @@
     
     NSLog(@"image tapped at location (%f, %f)", x,y);
     
-    EventDetailsViewController *eventDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"EventDetailsVC"];
+    UIViewController *triVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TriVC"];
     [self customizeSegmentedControl];
     [self customizeBackButton];
-
-    [self.navigationController pushViewController:eventDetailsVC animated:YES];
+    
+    [self.navigationController pushViewController:triVC animated:YES];
     
 }
 

@@ -10,8 +10,14 @@
 #import "BubbleView.h"
 #import "UIButton+CustomButton.h"
 #import "UIViewController+BackButton.h"
+#import "CommentsViewController.h"
+#import "MapFriendsViewController.h"
 
 @interface EventDetailsViewController : UIViewController
+
+
+
+//data of VC
 @property (weak, nonatomic) IBOutlet UILabel *hostSays;
 @property (weak, nonatomic) IBOutlet BubbleView *detailsView;
 @property (weak, nonatomic) IBOutlet UIImageView *hostPhoto;
