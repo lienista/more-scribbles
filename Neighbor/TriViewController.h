@@ -11,6 +11,7 @@
 #import "CommentsViewController.h"
 #import "MapFriendsViewController.h"
 #import "UIButton+CustomButton.h"
+#import "UIViewController+BackButton.h"
 
 @interface TriViewController : UIViewController
 

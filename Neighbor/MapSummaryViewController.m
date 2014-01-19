@@ -55,12 +55,10 @@
     [infoView addSubview:infoLabel];
     [self.view addSubview:infoView];
     
-    UISegmentedControl *mapSummaryFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"10mi ", @"25mi", nil]];
+    UISegmentedControl *mapSummaryFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"10mi", @"25mi ", @"100mi", nil]];
     [mapSummaryFilter sizeToFit];
     [mapSummaryFilter setSelectedSegmentIndex:0];
     self.navigationItem.titleView = mapSummaryFilter;
-
-    
     
 }
 
@@ -72,17 +70,20 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.hidesBackButton = YES;
 }
 
 
@@ -311,7 +312,7 @@
     
     UIViewController *triVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TriVC"];
     [self customizeSegmentedControl];
-    [self customizeBackButton];
+    //[self customizeBackButton];
     
     [self.navigationController pushViewController:triVC animated:YES];
     

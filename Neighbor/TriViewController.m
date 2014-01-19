@@ -35,7 +35,10 @@
     // Add A and B view controllers to the array
     self.allViewControllers = [[NSArray alloc] initWithObjects:vcA, vcB, vcC, nil];
     
-    UISegmentedControl *eventActionsFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: [UIImage imageNamed:@"details"],  [UIImage imageNamed:@"comments"],  [UIImage imageNamed:@"location"], nil]];
+    [self customizeBackButton];
+    
+    
+    UISegmentedControl *eventActionsFilter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects: [UIImage imageNamed:@"details"],  [UIImage imageNamed:@"comments"],  [UIImage imageNamed:@"map"], nil]];
     [eventActionsFilter sizeToFit];
     [eventActionsFilter setSelectedSegmentIndex:0];
     self.navigationItem.titleView = eventActionsFilter;
@@ -47,7 +50,17 @@
     [self.switchVCControl addTarget:self action:@selector(indexDidChangeForSegmentedControl:) forControlEvents:UIControlEventValueChanged];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self customizeBackButton];
+}
+
 -(void)viewWillDisappear:(BOOL)animated
+{
+    [self customizeBackButton];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
 {
     [self customizeBackButton];
 }

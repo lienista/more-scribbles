@@ -38,6 +38,7 @@
     [self.goingButton customizeButton];
     [self.goingButton addTarget:self action:@selector(goingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
+    [self customizeBackButton];
 
     
 
@@ -49,7 +50,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     self.view.tintColor = [UIColor blackColor];
-    [self customizeBackButton];
+    //[self customizeBackButton];
 }
 
 -(void)followButtonPressed:(id)sender
